@@ -8,8 +8,6 @@ import Playlist from "../Playlist/Playlist";
 function App() {
 
   const [searchResults, setSearchResults] = useState([]);
-  const [playlistName, setPlaylistName] = useState("New Playlist");
-  const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const search = useCallback((term) => {
     Spotify.search(term).then(setSearchResults);
@@ -24,7 +22,6 @@ function App() {
       
       <div className="Main_App">
         <SearchResults searchResults={searchResults}/>
-        <Playlist/>
       </div>
       <div className="Playlist"></div>
     </>
