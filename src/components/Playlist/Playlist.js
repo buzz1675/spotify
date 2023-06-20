@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import TrackList from "../TrackList/TrackList";
+import './Playlist.css'
 
 const Playlist = (props) => {
   const [selectedTracks, setSelectedTracks] = useState([]);
@@ -12,7 +13,7 @@ const Playlist = (props) => {
   );
 
   return (
-    <div>
+    <div className="playlist">
       <input onChange={handleNameChange} defaultValue={"Name your Playlist"} />
       <TrackList
         tracks={props.tracks}

@@ -15,10 +15,12 @@ function SearchBar(props) {
   return (
     <>
       <div className="SearchBar">
+        
         <input placeholder="Search your song!" onChange={handleTermChange} />
-        <button className="SearchButton" onClick={search}>
-          Search
+        <button className="Search_button" onClick={search}>
+          Search now
         </button>
+        
       </div>
     </>
   );
