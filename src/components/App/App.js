@@ -24,11 +24,7 @@ function App() {
 
       <div className="Main_App">
         <SearchResults tracks={searchResults}/>
-        <div className="search_results">
-          <div className="tracklist">
-            <div className="tracks"></div>
-          </div>
-        </div>
+
 
         <div className="Playlist">
           <div className="tracks"></div>
