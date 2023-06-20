@@ -1,8 +1,18 @@
 import React, { useState, useCallback } from "react";
 import "./App.css";
-import SearchBar from '../SearchBar/SearchBar'
+import SearchBar from '../SearchBar/SearchBar';
+import Spotify from "../../util/Spotify";
 
 function App() {
+
+  const [searchResults, setSearchResults] = useState([]);
+  const [playlistName, setPlaylistName] = useState("New Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+
+  const search = useCallback((term) => {
+    Spotify.search(term).then(setSearchResults);
+  }, []);
+
   return (
     <>
       <div className="titlebox">
