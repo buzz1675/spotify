@@ -1,25 +1,22 @@
-import React, { useState } from 'react';
-import TrackList from '../TrackList/TrackList';
+import React, { useState, useCallback } from "react";
+import TrackList from "../TrackList/TrackList";
 
-const Playlist = () => {
-    const [selectedTracks, setSelectedTracks] = useState([]);
-  
-    const addTrack = (track) => {
-      const updatedTracks = [...selectedTracks, track];
-      setSelectedTracks(updatedTracks);
-    };
-  
-    const removeTrack = (track) => {
-      const updatedTracks = selectedTracks.filter((selectedTrack) => selectedTrack.id !== track.id);
-      setSelectedTracks(updatedTracks);
-    };
-  
-    return (
-      <div>
-        <h2>Playlist</h2>
-        <TrackList tracks={selectedTracks} onRemove={removeTrack} />
-      </div>
-    );
-  };
-  
-  export default Playlist;
+const Playlist = (props) => {
+  const [selectedTracks, setSelectedTracks] = useState([]);
+
+  const handleNameChange = useCallback(
+    (event) => {
+      props.onNameChange(event.target.value);
+    },
+    [props.onNameChange]
+  );
+
+  return (
+    <div>
+      <input onChange={handleNameChange} defaultValue={"Name your Playlist"} />
+      <TrackList tracks={selectedTracks} />
+    </div>
+  );
+};
+
+export default Playlist;
