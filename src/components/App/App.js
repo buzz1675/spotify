@@ -14,14 +14,26 @@ function App() {
     Spotify.search(term).then(setSearchResults);
   }, []);
 
-  const updatePlaylistName = useCallback((name) => {
-    setplaylistName(name);
+  const addTrack = useCallback(
+    (track) => {
+      if (playlistTracks.some((savedTrack) => savedTrack.id === track.id))
+        return;
+
+        setplaylistTracks((prevTracks) => [...prevTracks, track]);
+    },
+    [playlistTracks]
+  );
+
+  const removeTrack = useCallback((track) => {
+    setplaylistTracks((prevTracks) =>
+      prevTracks.filter((currentTrack) => currentTrack.id !== track.id)
+    );
   }, []);
 
   const savePlaylist = useCallback(() => {
     const trackUris = playlistTracks.map((track) => track.uri);
     Spotify.savePlaylist(playlistName, trackUris).then(() => {
-      setplaylistName("New Playlist");
+      setplaylistName("Name your Playlist");
       setplaylistTracks([]);
     });
   }, [playlistName, playlistTracks]);
@@ -37,12 +49,13 @@ function App() {
       <SearchBar onSearch={search} />
 
       <div className="Main_App">
-        <SearchResults tracks={searchResults} />
+        <SearchResults tracks={searchResults} onAdd={addTrack}/>
         <Playlist
           name={playlistName}
-          track={playlistTracks}
+          tracks={playlistTracks}
           onNameChange={setplaylistName}
           onSave={savePlaylist}
+          onRemove = {removeTrack}
         />
 
         <div className="Playlist">
