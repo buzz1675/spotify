@@ -1,12 +1,11 @@
 import React, { useState, useCallback } from "react";
 import "./App.css";
-import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from "../SearchBar/SearchBar";
 import Spotify from "../../util/Spotify";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 
 function App() {
-
   const [searchResults, setSearchResults] = useState([]);
 
   const search = useCallback((term) => {
@@ -16,14 +15,25 @@ function App() {
   return (
     <>
       <div className="titlebox">
-        <img className="logo" src="https://cdn.usbrandcolors.com/images/logos/spotify-logo.svg"></img>
+        <img
+          className="logo"
+          src="https://cdn.usbrandcolors.com/images/logos/spotify-logo.svg"
+        ></img>
       </div>
-      <SearchBar onSearch={search}/>
-      
+      <SearchBar onSearch={search} />
+
       <div className="Main_App">
-        <SearchResults searchResults={searchResults}/>
+        <SearchResults tracks={searchResults}/>
+        <div className="search_results">
+          <div className="tracklist">
+            <div className="tracks"></div>
+          </div>
+        </div>
+
+        <div className="Playlist">
+          <div className="tracks"></div>
+        </div>
       </div>
-      <div className="Playlist"></div>
     </>
   );
 }
