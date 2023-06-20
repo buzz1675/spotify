@@ -2,6 +2,8 @@ import React, { useState, useCallback } from "react";
 import "./App.css";
 import SearchBar from '../SearchBar/SearchBar';
 import Spotify from "../../util/Spotify";
+import SearchResults from "../SearchResults/SearchResults";
+import Playlist from "../Playlist/Playlist";
 
 function App() {
 
@@ -19,8 +21,11 @@ function App() {
         <img className="logo" src="https://cdn.usbrandcolors.com/images/logos/spotify-logo.svg"></img>
       </div>
       <SearchBar onSearch={search}/>
-      <div><p></p></div>
-      <div className="SearchResults"></div>
+      
+      <div className="Main_App">
+        <SearchResults searchResults={searchResults}/>
+        <Playlist/>
+      </div>
       <div className="Playlist"></div>
     </>
   );
