@@ -1,5 +1,6 @@
 .searchResults{
     width: 40%;
+    height: minmax(500px, auto);
 background-color: rgba(0, 0, 0, 0.89);
 border-radius: 30px;
 margin: 0px 30px;
