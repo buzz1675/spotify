@@ -1,4 +1,12 @@
 .searchResults{
-    width: 50%;
+    width: 40%;
+background-color: rgba(0, 0, 0, 0.89);
+border-radius: 30px;
+margin: 0px 30px;
+}
 
+.searchResults h2 {
+    color: white;
+    display: flex;
+    justify-content: center;
 }

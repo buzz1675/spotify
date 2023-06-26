@@ -19,7 +19,7 @@ const Track = (props) => {
     if (props.isRemoval === true) {
       return <button onClick={removeTrack}>Remove from Playlist</button>;
     }
-    return <button onClick={addTrack}>Add to Playlist Playlist</button>;
+    return <button onClick={addTrack}>Add to Playlist</button>;
   };
 
   return (

@@ -1,20 +1,24 @@
-div.titlebox{
-height: 50px;
-background-color: black;
-padding: 10px;
-width: auto;
-display: flex;
-align-items: center;
-justify-content: center;
+div.titlebox {
+  height: 50px;
+  background-color: black;
+  padding: 10px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-img.logo{
-    height: 50px;
-
+img.logo {
+  height: 50px;
 }
 
-.Main_App{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
+.Main_App {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }

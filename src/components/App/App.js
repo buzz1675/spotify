@@ -19,14 +19,14 @@ function App() {
       if (playlistTracks.some((savedTrack) => savedTrack.id === track.id))
         return;
 
-        setplaylistTracks((prevTracks) => [...prevTracks, track]);
+        setplaylistTracks((previousTracks) => [...previousTracks, track]);
     },
     [playlistTracks]
   );
 
   const removeTrack = useCallback((track) => {
-    setplaylistTracks((prevTracks) =>
-      prevTracks.filter((currentTrack) => currentTrack.id !== track.id)
+    setplaylistTracks((previousTracks) =>
+    previousTracks.filter((currentTrack) => currentTrack.id !== track.id)
     );
   }, []);
 
