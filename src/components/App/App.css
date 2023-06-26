@@ -17,9 +17,9 @@ img.logo {
   flex-wrap: wrap;
   margin: 20px;
   justify-content: center;
+  
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
