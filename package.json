@@ -25,8 +25,7 @@
       "react-app/jest"
     ]
   },
-  "homepage" : "https://buzz1675.github.io/spotify",
-
+  "homepage": "https://buzz1675.github.io/spotify",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -38,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
